@@ -1,15 +1,14 @@
-# Use a lightweight Alpine Python image
+# Use a lightweight Python image
 FROM python:3.9-alpine
 
-# Set the working directory to root
-WORKDIR /
+# Set the working directory to /app
+WORKDIR /app
 
-# Copy application files to the root directory
-COPY app.sh /
+# Copy the Python application file to /app
+COPY app/app.py /app
 
 # Expose port 9000
 EXPOSE 9000
 
-# Set execute permissions for the script and set it as the container's entrypoint
-RUN chmod +x /app.sh
-ENTRYPOINT ["/app.sh"]
+# Run the Python server
+CMD ["python", "app.py"]
