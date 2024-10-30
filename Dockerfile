@@ -5,9 +5,9 @@ FROM python:3.9-slim
 RUN apt-get update && apt-get install -y fortune && apt-get clean
 
 # Copy application files
-WORKDIR /app
-COPY app.sh /app/
-COPY quotes.txt /app/
+WORKDIR /
+COPY app.sh /
+COPY quotes.txt /
 
 # Expose the port the app runs on
 EXPOSE 8080
