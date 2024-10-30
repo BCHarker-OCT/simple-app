@@ -10,7 +10,7 @@ COPY app.sh /
 COPY quotes.txt /
 
 # Expose the port the app runs on
-EXPOSE 8080
+EXPOSE 9000
 
 # Set execute permissions for the script and set it as the container's entrypoint
 RUN chmod +x app.sh

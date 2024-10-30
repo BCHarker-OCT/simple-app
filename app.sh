@@ -12,5 +12,5 @@ random_quote() {
 
 # Start a Python server on port 8080, serving a random quote for every request
 while true; do
-    printf 'HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\n%s' "$(random_quote)" | nc -l -p 8080 -q 1
+    printf 'HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\n%s' "$(random_quote)" | nc -l -p 9000 -q 1
 done
