@@ -23,7 +23,7 @@ jobs:
         with:
           token: ${{ secrets.PAT }} # PAT for accessing the source repository
           actions-configuration-files: .github/workflows/hello-world.yaml
-          source-repository: https://github.com/BCHarker-OCT/bch-submodule # Replace with actual repo
+          source-repository: BCHarker-OCT/bch-submodule # Replace with actual repo
           source-ref: main
 
       - name: Auto Commit Changes
