@@ -15,7 +15,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.head_ref }} # Checks out the current branch
+          ref: main # Checks out the current branch
           token: ${{ secrets.PAT }} # Uses PAT for authentication
 
       - name: Auto Update Workflow Configurations
@@ -24,6 +24,7 @@ jobs:
           token: ${{ secrets.PAT }} # PAT for accessing the source repository
           actions-configuration-files: .github/workflows/hello-world.yaml
           source-repository: https://github.com/BCHarker-OCT/bch-submodule # Replace with actual repo
+          # source-branch: main
 
       - name: Auto Commit Changes
         uses: stefanzweifel/git-auto-commit-action@v4
