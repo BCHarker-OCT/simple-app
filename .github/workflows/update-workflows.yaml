@@ -22,7 +22,7 @@ jobs:
         uses: avides/actions-action-configuration-autoupdate@v1.3.0
         with:
           token: ${{ secrets.PAT }} # PAT for accessing the source repository
-          actions-configuration-files: hello-world.yaml
+          actions-configuration-files: .github/workflows/hello-world.yaml
           source-repository: https://github.com/BCHarker-OCT/bch-submodule # Replace with actual repo
           source-ref: main
 
