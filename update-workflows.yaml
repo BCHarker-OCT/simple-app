@@ -1,0 +1,32 @@
+# .github/workflows/update-workflows.yml
+
+name: Update Workflows
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1" # Runs every Monday at midnight UTC
+
+jobs:
+  update-workflows:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.head_ref }} # Checks out the current branch
+          token: ${{ secrets.PAT }} # Uses PAT for authentication
+
+      - name: Auto Update Workflow Configurations
+        uses: avides/actions-action-configuration-autoupdate@v1.3.0
+        with:
+          token: ${{ secrets.PAT }} # PAT for accessing the source repository
+          actions-configuration-files: .github/workflows/*.yml
+          source-repository: https://github.com/BCHarker-OCT/bch-submodule # Replace with actual repo
+
+      - name: Auto Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update GitHub Action configuration
+          file_pattern: .github/workflows/*.yml
