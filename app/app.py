@@ -51,12 +51,18 @@ class HelloWorldHandler(BaseHTTPRequestHandler):
                     margin-top: 20px;
                     font-family: "Sixtyfour Convergence", sans-serif;
                     font-weight: 400;
+                    /* border settings */
+                    border-radius: 25px;
+                    background: #000;
+                    padding: 20px; 
+                    width: 200px;
+                    height: 150px;  
                 }}
             </style>
         </head>
         <body>
             <div class="main-text">Hello, World!</div>
-            <div class="main-text">Color of the day: <strong class="color-info">{background_color}</strong></div>
+            <div class="main-text">Color of the day: <br/><strong class="color-info">{background_color}</strong></div>
         </body>
         </html>
         """
