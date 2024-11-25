@@ -56,7 +56,7 @@ class HelloWorldHandler(BaseHTTPRequestHandler):
         </head>
         <body>
             <div class="main-text">Hello, World!</div>
-            <div class="color-info">Color of the day: <strong>{background_color}</strong></div>
+            <div class="main-text">Color of the day: <strong class="color-info">{background_color}</strong></div>
         </body>
         </html>
         """
