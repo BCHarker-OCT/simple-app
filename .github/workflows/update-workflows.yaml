@@ -4,8 +4,8 @@ name: Update Workflows
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * 1" # Runs every Monday at midnight UTC
+  # schedule:
+  #   - cron: "0 0 * * 1" # Runs every Monday at midnight UTC
 
 jobs:
   update-workflows:
@@ -25,8 +25,8 @@ jobs:
         uses: avides/actions-action-configuration-autoupdate@v1.3.0
         with:
           token: ${{ secrets.PAT }} # PAT for accessing the source repository
-          actions-configuration-files: ./hello-world.yaml, ./.github/workflows/hello-world.yaml
-          source-repository: https://github.com/BCHarker-OCT/bch-submodule # Replace with actual repo
+          actions-configuration-files: .github/workflows/hello-world.yaml
+          source-repository: BCHarker-OCT/bch-submodule # Replace with actual repo
           source-ref: main
 
       - name: Auto Commit Changes
