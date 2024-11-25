@@ -47,7 +47,7 @@ class HelloWorldHandler(BaseHTTPRequestHandler):
                     font-size: 2.5em;
                 }}
                 .color-info {{
-                    font-size: 1.5em;
+                    font-size: 1em;
                     margin-top: 20px;
                     font-family: "Sixtyfour Convergence", sans-serif;
                     font-weight: 400;
@@ -62,7 +62,7 @@ class HelloWorldHandler(BaseHTTPRequestHandler):
         </head>
         <body>
             <div class="main-text">Hello, World!</div>
-            <div class="main-text">Color of the day: <br/><strong class="color-info">{background_color}</strong></div>
+            <div class="main-text">Color of the day: <br/><br/><strong class="color-info">{background_color}</strong></div>
         </body>
         </html>
         """
