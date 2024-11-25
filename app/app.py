@@ -30,11 +30,15 @@ class HelloWorldHandler(BaseHTTPRequestHandler):
         <html>
         <head>
             <title>Hello, World!</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
             <style>
                 body {{
                     background-color: {background_color};
                     color: {text_color};
-                    font-family: Arial, sans-serif;
+                    font-family: "Noto Sans Display", sans-serif;
+                    font-weight: 400;
                     text-align: center;
                     margin-top: 20%;
                 }}
@@ -42,11 +46,17 @@ class HelloWorldHandler(BaseHTTPRequestHandler):
                     font-size: 1.5em;
                     margin-top: 20px;
                 }}
+                .doto {{
+                    font-family: "Doto", serif;
+                    font-weight: 700;
+                }}
             </style>
         </head>
         <body>
             <h1>Hello, World!</h1>
-            <div class="color-info">Color of the day: <strong>{background_color}</strong></div>
+            <div class="color-info">
+                Color of the day: <strong class="doto">{background_color}</strong>
+            </div>
         </body>
         </html>
         """
