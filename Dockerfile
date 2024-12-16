@@ -1,14 +1,23 @@
-# Use a lightweight Python image
-FROM python:3.9-alpine
+# Use Node.js as the base image
+FROM node:16-alpine
 
-# Set the working directory to /app
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Python application file to /app
-COPY app/app.py /app
+# Copy package.json and package-lock.json for dependency installation
+COPY app/package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application files
+COPY app/ ./
+
+# Compile TypeScript code to JavaScript
+RUN npx tsc
 
 # Expose port 9000
 EXPOSE 9000
 
-# Run the Python server
-CMD ["python", "app.py"]
+# Run the application
+CMD ["node", "dist/app.js"]
