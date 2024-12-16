@@ -75,13 +75,13 @@ class HelloWorldServer {
         </html>
       `;
 
-      res.writeHead(200, { "Content-Type": "text/html" });
+      res.writeHead(200, { "Content-Type": "text/html; charset=UTF-8" });
       res.end(htmlContent);
-    } else {
+  } else {
       res.writeHead(405, { "Content-Type": "text/plain" });
       res.end("Method Not Allowed");
-    }
   }
+}
 }
 
 // Start the server
