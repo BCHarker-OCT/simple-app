@@ -4,6 +4,7 @@ import { randomInt } from "crypto";
 // Load environment variables
 const PORT = parseInt(process.env.PORT || "9000", 10);
 const APP_GREETING = process.env.APP_GREETING || "Hello, World!";
+const MAGIC_WORD = process.env.MAGIC_WORD || "[[ Undefined ]] Come back later!"
 
 class HelloWorldServer {
   // Generate a random color in HEX format
@@ -65,8 +66,9 @@ class HelloWorldServer {
             </style>
         </head>
         <body>
-            <div class="main-text">${APP_GREETING}</div>
-            <div class="main-text">Color of the day: <br/><br/><strong class="color-info">${backgroundColor}</strong></div>
+            <div class="main-text">👋 ${APP_GREETING}</div>
+            <div class="main-text">🎨 Color of the day: <br/><br/><strong class="color-info">${backgroundColor}</strong></div>
+            <div class="main-text">🪄 Magic Word: <br/><br/><strong class="color-info">${MAGIC_WORD}</strong></div>
         </body>
         </html>
       `;
