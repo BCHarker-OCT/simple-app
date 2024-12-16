@@ -4,7 +4,7 @@ import { randomInt } from "crypto";
 // Load environment variables
 const PORT = parseInt(process.env.PORT || "9000", 10);
 const APP_GREETING = process.env.APP_GREETING || "Hello, World!";
-const MAGIC_WORD = process.env.MAGIC_WORD || "[[ Undefined ]]<br/>Come back later!"
+const MAGIC_WORD = process.env.MAGIC_WORD || "[[ Undefined ]] Come back later!"
 
 class HelloWorldServer {
   // Generate a random color in HEX format
@@ -51,11 +51,11 @@ class HelloWorldServer {
                 .main-text {
                     font-family: "Sora", sans-serif;
                     font-weight: 400;
-                    font-size: 1.5em;
+                    font-size: 1.8em;
                     padding: 20px;
                 }
                 .color-info {
-                    font-size: .5em;
+                    font-size: .8em;
                     margin-top: 20px;
                     font-family: "Sixtyfour Convergence", sans-serif;
                     font-weight: 400;
