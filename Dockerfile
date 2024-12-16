@@ -1,5 +1,6 @@
 # Use Node.js as the base image
-FROM node:16-alpine
+# FROM node:16-alpine
+FROM harbor.octanner.io/base/oct-node:20-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
