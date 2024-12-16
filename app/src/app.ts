@@ -36,6 +36,7 @@ class HelloWorldServer {
         <html>
         <head>
             <title>${APP_GREETING}</title>
+            <meta charset="UTF-8">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&family=Sora:wght@100..800&display=swap" rel="stylesheet">
@@ -51,6 +52,7 @@ class HelloWorldServer {
                     font-family: "Sora", sans-serif;
                     font-weight: 400;
                     font-size: 2.5em;
+                    padding: 30px;
                 }
                 .color-info {
                     font-size: 1em;
