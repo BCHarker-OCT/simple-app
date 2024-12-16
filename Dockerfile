@@ -10,7 +10,7 @@ COPY app/package*.json ./
 # Install dependencies
 RUN npm install
 
-# Copy the rest of the application files
+# Copy the rest of the application files (including tsconfig.json)
 COPY app/ ./
 
 # Compile TypeScript code to JavaScript
@@ -20,4 +20,4 @@ RUN npx tsc
 EXPOSE 9000
 
 # Run the application
-CMD ["node", "dist/app.js"]
+CMD ["node", "src/app.js"]
