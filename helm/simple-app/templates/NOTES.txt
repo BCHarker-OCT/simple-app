@@ -1,0 +1,7 @@
+Thank you for installing {{ .Release.Name }}!
+
+To access your application, use the following command:
+
+  kubectl port-forward service/{{ .Release.Name }} 8080:{{ .Values.service.port }} -n {{ .Values.namespace }}
+
+Then open http://localhost:8080 in your browser.

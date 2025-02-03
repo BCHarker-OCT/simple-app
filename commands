@@ -1,0 +1,17 @@
+mkdir helm && cd helm
+helm create simple-app
+helm lint ./helm/simple-app
+helm install simple-app . --namespace web-apps --create-namespace
+helm upgrade simple-app . --namespace web-apps
+helm upgrade simple-app . --namespace web-apps --atomic
+
+kubectl get pods -n web-apps
+kubectl port-forward service/simple-app 8080:80 -n web-apps
+docker build --load -t simple-app:latest .
+minikube image load localhost/simple-app:latest
+podman image ls
+minikube image load simple-app:latest
+minikube image ls
+
+
+kubectl port-forward service/simple-app 8080:80 -n web-apps

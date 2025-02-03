@@ -1,0 +1,40 @@
+namespace: web-apps  # Define the namespace here
+
+replicaCount: 2
+
+serviceAccount:
+  create: true  # Ensures Helm can create a ServiceAccount if needed
+  name: ""  # Leave blank to let Helm generate a name
+
+ingress:
+  enabled: false  # Change to true if you want Ingress enabled
+  host: simple-app.local  # The hostname for the Ingress
+  path: /
+  tls: false  # Set to true if you are using TLS
+
+# ingress:
+#   enabled: true  # Change to true if you want Ingress enabled
+#   host: simple-app.local  # The hostname for the Ingress
+#   path: /
+#   tls: false  # Set to true if you are using TLS  
+
+autoscaling:
+  enabled: false  # Set to true if you want autoscaling enabled
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80  # Adjust based on your needs
+
+image:
+  repository: simple-app
+  tag: latest
+  pullPolicy: Never
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 9000
+
+env:
+  PORT: "9000"
+  APP_GREETING: "Hello, World!"
+  MAGIC_WORD: "Open Sesame"  # Retrieved from a Secret

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: simple-app
+description: A Helm chart for deploying simple-app
+type: application
+version: 0.1.4
+appVersion: "latest"
