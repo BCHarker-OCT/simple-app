@@ -4,6 +4,7 @@ node_modules/
 # TypeScript cache and output
 dist/
 build/
+app/static/
 *.tsbuildinfo
 
 # Logs
@@ -29,4 +30,3 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
-
